@@ -1,17 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
+    android:background="@drawable/bg3"
+
     tools:context="com.in.trashcashserver.HomeActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAppHead"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbar2"
+        android:title="@string/app_name"
+        android:paddingStart="0dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User ID"
+            android:textColorHint="@color/colorAppBack"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:id="@+id/til_uid"
+            android:inputType="text"
+            android:textColor="@color/colorAppBack"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+
     <TextView
+        android:text="Trash deposited:"
+        android:textSize="20dp"
+        android:textColor="@color/colorAppBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_marginTop="20dp"
+        android:paddingLeft="5dp"
+        android:id="@+id/tVtrash"
+        android:layout_above="@+id/iBno1"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Plastic bottles"
+        android:textColor="@color/colorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tVbottle"
+        android:layout_above="@+id/tVwrappers"
+        android:layout_alignParentStart="true" />
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/plus"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/iBno1"
+        android:layout_toRightOf="@+id/tVbottle"
+        android:layout_above="@+id/iBno2"
+        android:layout_toEndOf="@+id/tVwrappers" />
+
+
+
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tVbottle"
+        android:layout_toEndOf="@+id/iBno1"
+        android:layout_marginStart="36dp"
+        android:textColor="@color/colorAppBack"
+        android:id="@+id/tVno1" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iBno2"
+        android:layout_toEndOf="@+id/iBno2"
+        android:layout_marginStart="36dp"
+        android:id="@+id/tVno2" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/plus"
+        android:id="@+id/iBno2"
+        android:paddingTop="5dp"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/iBno1" />
+
+
+    <TextView
+        android:text="Plastic Wrappers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textColor="@color/colorText"
+        android:id="@+id/tVwrappers"
+        android:layout_alignBottom="@+id/iBno2"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:text="Award Credits"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_capsule"
+        android:textColor="@color/colorAppBack"
+        android:id="@+id/bt_credit"
+        android:layout_below="@+id/tVno2"
+
+        android:onClick="invokeCredit" />
+
+
+
 </RelativeLayout>
